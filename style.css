@@ -5,24 +5,48 @@ input{
     outline: none;
     padding: 8px 30px;
     outline: none;
+    position: relative;
+    left: 60px;
 }
-.container button{
+.container .btn{
     border-radius: 40px;
     border: none;
     outline: none;
     background-color: black;
     position: relative;
-    right: 60px;
+    right: 20px;
 }
 ul li{
     cursor: pointer;
     position: relative;
     padding: 10px 10px 10px 50px;
     list-style: none;
-    font-size: 20px;    
+    font-size: 20px;  
+      
 }
 ul li.checket::before{
     background-image: url();
+}
+#mydiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px 0px;
+}
+#envert , #enorange , #enrouge{
+    margin-right: 8px;
+    margin-right: 8px;
+}
+#envert{
+    background-color: green;
+}
+#enorange{
+    background-color: orange;
+}
+#enrouge{
+    background-color: red;
 }
 @media screen and (max-width: 900px) {
     input {
