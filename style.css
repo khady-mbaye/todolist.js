@@ -8,46 +8,44 @@ input{
     position: relative;
     left: 60px;
 }
-.container .btn{
+.container .ajout{
     border-radius: 40px;
     border: none;
     outline: none;
     background-color: black;
     position: relative;
     right: 20px;
+    z-index: 100;
 }
 ul li{
-    cursor: pointer;
-    position: relative;
-    padding: 10px 10px 10px 50px;
+    padding: 8px 15px;
     list-style: none;
-    font-size: 20px;  
+    font-size: 20px; 
+    border: 10px;
       
 }
-ul li.checket::before{
-    background-image: url();
-}
 #mydiv{
+    border: 1px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
     border-radius: 10px;
-    margin: 20px 0px;
-}
-#envert , #enorange , #enrouge{
-    margin-right: 8px;
-    margin-right: 8px;
-}
-#envert{
-    background-color: green;
-}
-#enorange{
-    background-color: orange;
-}
-#enrouge{
+    margin: 15px 0px;
     background-color: red;
 }
+#mydiv button{
+    border-radius: 40px;
+    margin-right: 8px;
+}
+button:first-child{
+    background: red;
+}
+button:nth-child(2) {
+    background-color: orange;
+  }
+button:last-child{
+    background-color: green;
+  }
 @media screen and (max-width: 900px) {
     input {
      width: 90%;

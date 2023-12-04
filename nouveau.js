@@ -1,57 +1,53 @@
-const inputbox = document.getElementById('input-box')
-const ullist = document.getElementById('les-list')
+// recuperation id
+let valinput = document.getElementById("val");
+let listes = document.getElementById("lists");
+// pour faire ajout
 function addtask() {
-    if (inputbox.value === '') {
-        alert('ajouter un tache')
+    if (valinput.value === "") {
+        alert("ajouter une tache");
     }
     else {
-        let dv = document.createElement('div')
-        ullist.appendChild(dv)
-        dv.setAttribute('id', 'mydiv')
-        
-        let li = document.createElement("li")
-        li.innerHTML = inputbox.value
-        dv.appendChild(li)
-        //le span regroupe les trois button
-        let sp = document.createElement('span')
-        dv.appendChild(sp)
+        let mydiv = document.createElement('div')
+        listes.appendChild(mydiv)
+        mydiv.setAttribute('id' , 'mydiv')
+        //creation de bouton li
+        let myli = document.createElement("li")
+        mydiv.appendChild(myli)
+        myli.innerHTML = valinput.value;
+       
+        //creation d'un span pou regrouper les 3 boutons
+        let spans = document.createElement("span")
+        mydiv.appendChild(spans)
 
-        let but0 = document.createElement('button')
-        but0.textContent = 'to do'
-        sp.appendChild(but0)
-        but0.setAttribute('id', 'enrouge')
+        // creation button1
+        let bouton1 = document.createElement("button");
+        bouton1.innerText = "ToDo"
+        // creation button2
+        let bouton2 = document.createElement("button")
+         bouton2.innerText = "Doing"
+        // creation button3
+        let bouton3 = document.createElement("button")
+        bouton3.innerText = "Done"
 
+        spans.appendChild(bouton1)
+        spans.appendChild(bouton2)
+        spans.appendChild(bouton3)
+        valinput.value = "";
+        // changement color
+        bouton2.addEventListener('click', () => {
+            mydiv.style.backgroundColor = 'yellow';
+        });
 
-        let but1 = document.createElement('button')
-        but1.textContent = 'doing'
-        sp.appendChild(but1)
-        but1.setAttribute('id', 'enorange')
-        
-        let but2 = document.createElement('button')
-        but2.textContent = 'done'
-        sp.appendChild(but2)
-        but2.setAttribute('id', 'envert')
-        
-        //changement de couleur du button to do
-        let orange = document.querySelector('#enorange')
-        orange.addEventListener('click', fonct0)
-        function fonct0() {
-            but0.style.backgroundColor = 'orange'
-        }
+        bouton3.addEventListener('click', () => {
+            mydiv.style.backgroundColor = 'green';
+        });
 
-        let vert = document.querySelector('#envert')
-        vert.addEventListener('click', foncta)
-        function foncta() {
-            but0.style.backgroundColor = 'green'
-        }
-        let rouge = document.querySelector('#enrouge')
-        rouge.addEventListener('click', fonctb)
-        function fonctb() {
-            but0.style.backgroundColor = 'red'
-        }
+        bouton1.addEventListener('click', () => {
+            mydiv.style.backgroundColor = 'red';
+        });
     }
-    inputbox.value = ""
-}
 
+
+}
 
 
